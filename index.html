@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phan Lá É - Trang Chủ & Đặt Bàn</title>
+    <title>Nhà Hàng Phan Lá É</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* CSS HỖ TRỢ CHUYỂN ĐỔI TRANG (SPA) */
         .hidden-section {
             display: none !important;
         }
@@ -21,15 +21,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -40,8 +33,8 @@
         <div class="header-top">
             <div class="container top-bar-content">
                 <div class="social-icons">
-                    <a href="#" class="social-link fb"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-link tiktok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/NhaHangPhanLaE" class="social-link fb" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://tiktok.com/@nhahangphanlae" class="social-link tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
                 </div>
                 <span class="separator">|</span>
                 <div class="auth-links">
@@ -54,20 +47,16 @@
 
         <div class="header-main">
             <div class="container main-nav-content">
-                <a href="javascript:void(0)" onclick="switchTab('home')" class="logo-container">
-                    <img src="image/Logo PLÉ.svg" alt="Phan Lá É Logo" class="main-logo"
-                        onerror="this.src='https://placehold.co/150x60?text=Logo'">
+                <a href="#" class="logo-container">
+                    <img src="image/Logo.svg" alt="Phan Lá É Logo" class="main-logo" 
+                         onerror="this.src='https://placehold.co/150x60?text=Logo'">
                 </a>
 
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="javascript:void(0)" onclick="switchTab('home')" id="nav-home" class="active"
-                                style="color: #d32f2f;">Ưu Đãi</a></li>
-
+                        <li><a href="#" id="nav-home" class="active" style="color: #d32f2f;">Ưu Đãi</a></li>
                         <li><a href="https://menu.phanlaerestaurant.com/" target="_blank">Thực Đơn</a></li>
-
-                        <li><a href="javascript:void(0)" onclick="switchTab('booking')" id="nav-booking">Đặt Bàn</a>
-                        </li>
+                        <li><a href="#dat-ban" id="nav-booking">Đặt Bàn</a></li>
                     </ul>
                 </nav>
             </div>
@@ -76,41 +65,21 @@
 
     <div id="home-view">
 
-        <div class="slider-section">
-            <div class="slider-container" id="slider-container">
-                <div class="slider-wrapper">
-                    <div class="slide">
-                        <img src="image/Banner Slide (Động).jpg" alt="Banner 1"
-                            onerror="this.src='https://placehold.co/1200x450/333/FFF?text=Banner+1'">
-                    </div>
-                    <div class="slide">
-                        <img src="image/Banner Slide (Động).jpg" alt="Banner 2"
-                            onerror="this.src='https://placehold.co/1200x450/d32f2f/FFF?text=Mon+Ngon'">
-                    </div>
-                    <div class="slide">
-                        <img src="image/Banner Slide (Động).jpg" alt="Banner 3"
-                            onerror="this.src='https://placehold.co/1200x450/1877f2/FFF?text=Lau+Ga+La+E'">
-                    </div>
-                </div>
-                <button class="prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                <button class="next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-                <div class="dots-container">
-                    <span class="dot active" data-index="0"></span>
-                    <span class="dot" data-index="1"></span>
-                    <span class="dot" data-index="2"></span>
-                </div>
+        <div class="hero-static-section">
+            <div class="hero-container">
+                <img src="image/Banner Slide.jpg" alt="Phan Lá É Banner" class="hero-img"
+                     onerror="this.src='https://placehold.co/1200x450/333/FFF?text=Banner+Phan+La+E'">
             </div>
         </div>
 
         <div class="promo-banner-section">
             <div class="container">
                 <a href="#" class="banner-link">
-                    <img src="image/Banner Khuyến Mãi (Tĩnh).svg" alt="Chương trình khuyến mãi"
-                        class="static-banner-img"
-                        onerror="this.src='https://placehold.co/1200x200/ff6600/fff?text=Banner+Khuyen+Mai'">
+                    <img src="image/Banner Khuyến Mãi (Tĩnh).svg" alt="Chương trình khuyến mãi" class="static-banner-img"
+                         onerror="this.src='https://placehold.co/1200x200/ff6600/fff?text=Banner+Khuyen+Mai'">
                 </a>
                 <div class="booking-btn-container">
-                    <a href="javascript:void(0)" onclick="switchTab('booking')" class="btn-booking-now">
+                    <a href="#dat-ban" class="btn-booking-now">
                         <i class="fas fa-calendar-alt"></i> Đặt Bàn Ngay
                     </a>
                 </div>
@@ -126,38 +95,19 @@
                             <span class="text-purple">Phan Lá É</span>
                         </h2>
                         <div class="about-desc">
-                            <span class="highlight">Nhà Hàng Phan Lá É</span> - điểm đến ăn uống nổi tiếng tọa lạc tại
-                            Quận
-                            2 (TP.HCM), gắn liền với món lẩu gà lá é trứ danh chuẩn vị miền Trung và
-                            được chế biến bởi những đầu bếp dày dặn kinh nghiệm. Nồi lẩu nóng hổi với thịt gà mềm, lá é
-                            tươi
-                            và nước dùng ngọt thanh
-                            giúp giải cảm, bồi bổ sức khỏe và hoàn toàn 100% không chất phụ gia. Ngoài lẩu gà lá é, Nhà
-                            Hàng
-                            Phan Lá É còn có lẩu gà
-                            tre, gà nướng lá chúc, gà tre nướng giấy bạc, đọt su xào lòng mề gà,…
+                            <span class="highlight">Nhà Hàng Phan Lá É</span> điểm đến ăn uống nổi tiếng tọa lạc tại Quận 2 (TP.HCM), gắn liền với món lẩu gà lá é trứ danh chuẩn vị miền Trung và được chế biến bởi những đầu bếp dày dặn kinh nghiệm. Nồi lẩu nóng hổi với thịt gà mềm, lá é tươi và nước dùng ngọt thanh giúp giải cảm, bồi bổ sức khỏe và hoàn toàn 100% không chất phụ gia. Ngoài lẩu gà lá é, Nhà Hàng Phan Lá É còn có lẩu gà tre, gà nướng lá chúc, gà tre nướng giấy bạc, đọt su xào lòng mề gà,…
                             <br><br>
-                            Đến đây, thực khách vừa thưởng thức món ngon dân dã giữa không gian thoáng mát, đậm chất
-                            miền
-                            quê vừa được hưởng nhiều
-                            ưu đãi độc quyền dành cho hội viên Thẻ Sành và MBC: càng ăn càng “đã”, càng quẹt càng hời!
+                            Đến đây, thực khách vừa thưởng thức món ngon dân dã giữa không gian thoáng mát, đậm chất miền quê vừa được hưởng nhiều ưu đãi độc quyền dành cho hội viên Thẻ Sành và MBC: càng ăn càng “đã”, càng quẹt càng hời!
                         </div>
-                        <a href="https://menu.phanlaerestaurant.com/" class="btn-menu">
+                        <a href="https://menu.phanlaerestaurant.com/" class="btn-menu" target="_blank">
                             <span>Xem thực đơn</span>
                             <i class="fas fa-arrow-right arrow-icon"></i>
                         </a>
                     </div>
+                    
                     <div class="about-image-box">
-                        <div class="about-slider-track">
-                            <img src="image/restaurant pha la e.png"
-                                onerror="this.src='https://placehold.co/550x325/333/FFF?text=Nha+Hang+1'">
-                            <img src="public/images/nha-hang-2.jpg"
-                                onerror="this.src='https://placehold.co/550x325/6b01a3/FFF?text=Nha+Hang+2'">
-                            <img src="public/images/nha-hang-3.jpg"
-                                onerror="this.src='https://placehold.co/550x325/ff2500/FFF?text=Nha+Hang+3'">
-                            <img src="public/images/nha-hang-1.jpg"
-                                onerror="this.src='https://placehold.co/550x325/333/FFF?text=Nha+Hang+1'">
-                        </div>
+                        <img src="image/restaurant pha la e.png" alt="Nhà hàng Phan Lá É" class="about-static-img"
+                             onerror="this.src='https://placehold.co/550x325/333/FFF?text=Nha+Hang'">
                     </div>
                 </div>
             </div>
@@ -173,7 +123,7 @@
 
                     <div class="exclusive-image-box">
                         <img src="image/banne promsion.jpg" alt="Khuyến mãi độc quyền" class="exclusive-main-img"
-                            onerror="this.src='https://placehold.co/500x380/eee/333?text=Anh+Khuyen+Mai'">
+                             onerror="this.src='https://placehold.co/500x380/eee/333?text=Anh+Khuyen+Mai'">
                     </div>
 
                     <div class="exclusive-content">
@@ -185,25 +135,18 @@
                         <div class="exclusive-desc">
                             <span>Để mỗi trải nghiệm thưởng thức thêm trọn vẹn, </span>
                             <b>Nhà hàng Phan Lá É</b>
-                            <span> dành tặng ưu đãi độc quyền cho khách hàng sở hữu Thẻ Sành (OBranding):</span>
-                            <b class="highlight-box">Giảm ngay 15% trên tổng hoá đơn</b>
-                            <span>áp dụng không giới hạn số lần sử dụng và không giới hạn món ăn trong thực đơn. </span>
+                            <span> dành tặng ưu đãi độc quyền cho khách hàng sở hữu Thẻ Sành (OBranding).</span>
+                            <b>Giảm ngay 15% trên tổng hoá đơn</b>
+                            <span>áp dụng không giới hạn số lần sử dụng và không giới hạn món ăn trong thực đơn.</span>
                             <br><br>
-                            <span>Chỉ cần quét</span>
-                            <b>Thẻ Sành</b>
-                            <span>trước thanh toán, khách hàng sẽ được ưu đãi trực tiếp và minh bạch trên từng
-                                món:</span>
+                            <span>Chỉ cần quét</span> <b>Thẻ Sành</b> <span>trước thanh toán, khách hàng sẽ được ưu đãi trực tiếp và minh bạch trên từng món:</span>
                         </div>
 
                         <div class="voucher-grid">
-                            <a href="#" class="voucher-item"><img src="image/combo 509.svg"
-                                    onerror="this.src='https://placehold.co/260x80/4a0080/fff?text=Combo+509K'"></a>
-                            <a href="#" class="voucher-item"><img src="image/chi tu 237.svg"
-                                    onerror="this.src='https://placehold.co/260x80/4a0080/fff?text=Lau+Ga+237K'"></a>
-                            <a href="#" class="voucher-item"><img src="image/chi tu 212.svg"
-                                    onerror="this.src='https://placehold.co/260x80/4a0080/fff?text=Ga+Nuong+212K'"></a>
-                            <a href="#" class="voucher-item"><img src="image/chi tu 76.svg"
-                                    onerror="this.src='https://placehold.co/260x80/4a0080/fff?text=Canh+Ga+76K'"></a>
+                            <a href="#" class="voucher-item"><img src="image/combo 509.svg" onerror="this.src='https://placehold.co/260x80/4a0080/fff?text=Combo+509K'"></a>
+                            <a href="#" class="voucher-item"><img src="image/chi tu 237.svg" onerror="this.src='https://placehold.co/260x80/4a0080/fff?text=Lau+Ga+237K'"></a>
+                            <a href="#" class="voucher-item"><img src="image/chi tu 212.svg" onerror="this.src='https://placehold.co/260x80/4a0080/fff?text=Ga+Nuong+212K'"></a>
+                            <a href="#" class="voucher-item"><img src="image/chi tu 76.svg" onerror="this.src='https://placehold.co/260x80/4a0080/fff?text=Canh+Ga+76K'"></a>
                         </div>
                     </div>
                 </div>
@@ -215,19 +158,18 @@
         <section class="booking-section">
             <div class="container">
                 <div class="booking-container">
-
                     <div class="booking-image-col">
-                        <img src="image/banner booking.jpg" alt="Vị ngon đậm đà" class="booking-banner-img">
+                        <img src="image/banner booking.jpg" alt="Vị ngon đậm đà" class="booking-banner-img" 
+                             onerror="this.src='https://placehold.co/600x650/ff6600/fff?text=Banner+Dat+Ban'">
                     </div>
 
                     <div class="booking-form-col">
                         <div class="booking-form-wrapper">
                             <div class="form-header">
                                 <h3>ĐẶT BÀN TẠI <span class="brand-name">PHAN LÁ É</span></h3>
-                                <p class="branch-info"><i class="fas fa-map-marker-alt"></i> Chi nhánh: 63 Cao Đức Lân,
-                                    Phường Bình Trưng, TP.HCM</p>
+                                <p class="branch-info"><i class="fas fa-map-marker-alt"></i> Chi nhánh: 63 Cao Đức Lân, Phường Bình Trưng, TP.HCM</p>
                             </div>
-
+                            
                             <form id="bookingForm" class="booking-form">
                                 <div class="form-row">
                                     <div class="form-group">
@@ -251,8 +193,7 @@
                                         <label>Số lượng người <span class="required">*</span></label>
                                         <div class="input-with-icon">
                                             <i class="fas fa-user-friends"></i>
-                                            <input type="number" name="Số người" placeholder="Ví dụ: 12" min="1"
-                                                required>
+                                            <input type="number" name="Số người" placeholder="Ví dụ: 12" min="1" required>
                                             <span class="unit">người</span>
                                         </div>
                                     </div>
@@ -281,7 +222,7 @@
                                         <label>Số điện thoại <span class="required">*</span></label>
                                         <div class="input-with-icon">
                                             <i class="fas fa-phone-alt"></i>
-                                            <input type="tel" name="Số điện thoại" placeholder="0909 666 333" required>
+                                            <input type="tel" name="Số điện thoại" placeholder="0909 666 333" pattern="[0-9]{10}" title="Vui lòng nhập đúng 10 chữ số điện thoại" required>
                                         </div>
                                         <small class="note-text">(Khuyến khích chọn số điện thoại liên kết Zalo)</small>
                                     </div>
@@ -291,8 +232,7 @@
                                     <label>Ghi chú</label>
                                     <div class="input-with-icon textarea-icon">
                                         <i class="fas fa-pen"></i>
-                                        <textarea rows="2" name="Ghi chú"
-                                            placeholder="Giữ bàn cho tôi 30 phút"></textarea>
+                                        <textarea rows="2" name="Ghi chú" placeholder="Giữ bàn cho tôi 30 phút"></textarea>
                                     </div>
                                 </div>
 
@@ -330,49 +270,71 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-col logo-col">
-                    <img src="image/logo nhà hàng phan lá é.png" alt="Phan Lá É"
-                        onerror="this.src='https://placehold.co/150x150/ff6600/fff?text=Logo'">
+                    <img src="image/logo nha hang phan la e.png" alt="Phan Lá É" 
+                         onerror="this.src='https://placehold.co/150x150/ff6600/fff?text=Logo'">
                 </div>
+                
                 <div class="footer-col">
                     <div class="footer-heading">Nhà Hàng Phan Lá É</div>
                     <ul class="footer-list">
-                        <li><a href="javascript:void(0)" onclick="switchTab('home')">Về Phan Lá É</a></li>
-                        <li><a href="https://menu.phalaerestaurant.com" target="_blank">Thực Đơn</a></li>
-                        <li><a href="javascript:void(0)" onclick="switchTab('booking')">Đặt Bàn</a></li>
+                        <li>
+                            <a href="javascript:void(0)" onclick="window.location.hash=''; window.scrollTo({top: 0, behavior: 'smooth'});">
+                                Về Phan Lá É
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://menu.phanlaerestaurant.com/" target="_blank">
+                                Thực Đơn
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#dat-ban">
+                                Đặt Bàn
+                            </a>
+                        </li>
                     </ul>
                 </div>
+
                 <div class="footer-col address-col">
                     <div class="footer-heading">Địa Chỉ</div>
                     <div class="footer-text">63 Cao Đức Lân, Phường Bình Trưng, Thành phố Hồ Chí Minh</div>
                     <div class="hotline-box">
-                        <span class="hotline-label">Hotline:</span> <span class="hotline-number">0933 667 929</span>
+                        <span class="hotline-label">Hotline:</span> 
+                        <span class="hotline-number">0933 667 929</span>
                     </div>
                 </div>
+
                 <div class="footer-col">
                     <div class="footer-heading">Kết Nối Với Chúng Tôi</div>
                     <div class="social-group">
-                        <a href="https://www.facebook.com/NhaHangPhanLaE" target="_blank" class="social-btn fb"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.tiktok.com/@nhahangphanlae" target="_blank" class="social-btn tiktok"><i
-                                class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/NhaHangPhanLaE" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://tiktok.com/@nhahangphanlae" target="_blank" class="social-btn tiktok"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-openlive">
-                <a href="https://openlivegroup.com/" target="_blank" class="cng-ty-c">CÔNG TY CỔ PHẦN ĐẦU TƯ & PHÁT
-                    TRIỂN OPENLIVE</a>
-                <div class="m-s-thu">Mã số thuế: 0317141176 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp ngày
-                    25/01/2022.</div>
+                <a href="https://openlivegroup.com/" target="_blank" class="cng-ty-c">CÔNG TY CỔ PHẦN ĐẦU TƯ & PHÁT TRIỂN OPENLIVE</a>
+                
+                <div class="m-s-thu">
+                    Mã số thuế: 0317141176 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp ngày 25/01/2022.
+                </div>
+                
                 <div class="hotline-1900-5372-parent">
                     <div class="m-s-thu">Hotline: 1900 5372</div>
-                    <div class="frame-child"></div>
+                    <div class="frame-child"></div> 
                     <div class="m-s-thu">Email: contact@openlivegroup.com</div>
                 </div>
-                <div class="a-ch-tng">Địa chỉ: Tầng 1, Tòa nhà Packsimex, 52 Đông Du, Phường Bến Nghé, Quận 1, Thành phố
-                    Hồ Chí Minh, Việt Nam.</div>
+                
+                <div class="a-ch-tng">
+                    Địa chỉ: Tầng 1, Tòa nhà Packsimex, 52 Đông Du, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, Việt Nam.
+                </div>
+                
                 <div class="obranding-parent">
-                    <div class="m-s-thu">OBranding</div> <span class="copyright-symbol">©</span>
+                    <div class="m-s-thu">OBranding</div> 
+                    <span class="copyright-symbol">©</span>
                     <div class="m-s-thu">All Rights Reserved.</div>
                 </div>
             </div>
@@ -380,184 +342,127 @@
     </footer>
 
     <script>
-        // --- CẤU HÌNH BAN ĐẦU ---
         document.addEventListener('DOMContentLoaded', function () {
-
-            // 1. KIỂM TRA ĐƯỜNG DẪN KHI VỪA VÀO WEB
-            // Nếu người dùng vào link .../dat-ban thì tự động mở tab đặt bàn
-            const path = window.location.pathname;
-            if (path.includes('/dat-ban')) {
-                switchTab('booking', false); // false nghĩa là không cần pushState nữa vì đang ở đó rồi
-            } else {
-                switchTab('home', false);
-            }
-
-            // 2. KHỞI TẠO SLIDER
-            initSlider();
-
-            // 3. KHỞI TẠO FORM BOOKING
+            
+            // 1. Initialize Components
             initBookingForm();
-        });
+            handleHashChange(); // Run once on load
 
-        // --- HÀM CHUYỂN ĐỔI TAB & ĐỔI LINK URL ---
-        function switchTab(tabName, updateHistory = true) {
-            const homeView = document.getElementById('home-view');
-            const bookingView = document.getElementById('booking-view');
-            const navHome = document.getElementById('nav-home');
-            const navBooking = document.getElementById('nav-booking');
+            // 2. Hash-based Routing (SPA Logic)
+            function handleHashChange() {
+                const hash = window.location.hash;
+                const homeView = document.getElementById('home-view');
+                const bookingView = document.getElementById('booking-view');
+                const navHome = document.getElementById('nav-home');
+                const navBooking = document.getElementById('nav-booking');
 
-            // Cuộn lên đầu trang
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Smooth scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            if (tabName === 'home') {
-                // Hiển thị giao diện
-                homeView.classList.remove('hidden-section');
-                bookingView.classList.add('hidden-section');
+                if (hash === '#dat-ban') {
+                    // Show Booking View
+                    homeView.classList.add('hidden-section');
+                    bookingView.classList.remove('hidden-section');
+                    bookingView.classList.add('fade-in-effect');
 
-                // Active menu
-                navHome.classList.add('active');
-                navHome.style.color = '#d32f2f';
-                navBooking.classList.remove('active');
-                navBooking.style.color = '';
+                    // Update Menu State
+                    if (navBooking) { navBooking.classList.add('active'); navBooking.style.color = '#d32f2f'; }
+                    if (navHome) { navHome.classList.remove('active'); navHome.style.color = ''; }
+                    
+                    document.title = "Đặt Bàn - Phan Lá É";
+                } else {
+                    // Show Home View (Default)
+                    homeView.classList.remove('hidden-section');
+                    bookingView.classList.add('hidden-section');
 
-                // ĐỔI LINK TRÊN THANH ĐỊA CHỈ VỀ TRANG CHỦ
-                if (updateHistory) {
-                    history.pushState({ tab: 'home' }, "Trang Chủ", "/");
+                    // Update Menu State
+                    if (navHome) { navHome.classList.add('active'); navHome.style.color = '#d32f2f'; }
+                    if (navBooking) { navBooking.classList.remove('active'); navBooking.style.color = ''; }
+                    
                     document.title = "Trang Chủ - Phan Lá É";
                 }
             }
-            else if (tabName === 'booking') {
-                // Hiển thị giao diện
-                homeView.classList.add('hidden-section');
-                bookingView.classList.remove('hidden-section');
-                bookingView.classList.add('fade-in-effect');
 
-                // Active menu
-                navBooking.classList.add('active');
-                navBooking.style.color = '#d32f2f';
-                navHome.classList.remove('active');
-                navHome.style.color = '';
-
-                // ĐỔI LINK TRÊN THANH ĐỊA CHỈ THÀNH /dat-ban
-                if (updateHistory) {
-                    history.pushState({ tab: 'booking' }, "Đặt Bàn", "/dat-ban");
-                    document.title = "Đặt Bàn - Phan Lá É";
+            // Listen for URL changes
+            window.addEventListener('hashchange', handleHashChange);
+            
+            // Add click events for Logo & Footer links to reset hash
+            const logoLink = document.querySelector('.logo-container');
+            const footerHomeLink = document.getElementById('footer-home-link');
+            
+            const resetToHome = (e) => {
+                // If we are already on home (no hash or empty hash), just scroll top
+                if (!window.location.hash || window.location.hash === '#') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    // Otherwise, remove hash to trigger hashchange to home
+                    // window.location.hash = ''; // This works too
                 }
-            }
-        }
+            };
 
-        // --- XỬ LÝ KHI NGƯỜI DÙNG BẤM NÚT BACK (QUAY LẠI) TRÊN TRÌNH DUYỆT ---
-        window.addEventListener('popstate', function (event) {
-            if (event.state && event.state.tab) {
-                switchTab(event.state.tab, false);
-            } else {
-                switchTab('home', false);
-            }
+            if(logoLink) logoLink.addEventListener('click', resetToHome);
+            if(footerHomeLink) footerHomeLink.addEventListener('click', resetToHome);
         });
 
-        // --- CÁC HÀM XỬ LÝ KHÁC (SLIDER, FORM) ---
-
-        function initSlider() {
-            const wrapper = document.querySelector('.slider-wrapper');
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.dot');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const container = document.getElementById('slider-container');
-            let currentIndex = 0;
-
-            if (!wrapper || slides.length === 0) return;
-
-            const totalSlides = slides.length;
-            let slideTimer;
-
-            function goToSlide(index) {
-                if (index < 0) currentIndex = totalSlides - 1;
-                else if (index >= totalSlides) currentIndex = 0;
-                else currentIndex = index;
-                wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-                dots.forEach(dot => dot.classList.remove('active'));
-                if (dots[currentIndex]) dots[currentIndex].classList.add('active');
-            }
-            function nextSlide() { goToSlide(currentIndex + 1); }
-            function prevSlide() { goToSlide(currentIndex - 1); }
-            function startAutoSlide() { slideTimer = setInterval(nextSlide, 3000); }
-            function stopAutoSlide() { clearInterval(slideTimer); }
-
-            if (nextBtn) nextBtn.addEventListener('click', () => { stopAutoSlide(); nextSlide(); startAutoSlide(); });
-            if (prevBtn) prevBtn.addEventListener('click', () => { stopAutoSlide(); prevSlide(); startAutoSlide(); });
-            dots.forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    stopAutoSlide();
-                    goToSlide(parseInt(e.target.getAttribute('data-index')));
-                    startAutoSlide();
-                });
-            });
-            if (container) {
-                container.addEventListener('mouseenter', stopAutoSlide);
-                container.addEventListener('mouseleave', startAutoSlide);
-            }
-            startAutoSlide();
-        }
-
+        // 3. Booking Form Logic
         function initBookingForm() {
             const bookingForm = document.getElementById('bookingForm');
             const successPopup = document.getElementById('successPopup');
             const closePopupBtn = document.getElementById('closePopupBtn');
             const submitBtn = document.querySelector('.btn-submit-booking');
+            
+            // Google Apps Script URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx79GjtW8l8uCj6p5D2nhTP1FPBrlRNoN5ckqLy3oJotyIudZJUHEMR9QoMXk6Unv5h/exec';
 
-            // === DÁN LINK WEB APP BẠN COPY Ở BƯỚC 2 VÀO ĐÂY ===
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyEU2J2vjQjXoZHq5zEipQoIR7PQK-xZqbF5CApSKytoc4pXrGoLI-QvTkHdqvpAEAW/exec';
-
+            // Set default date to today
             const setTodayDate = () => {
                 const dateInput = document.getElementById('bookingDate');
                 if (dateInput) {
-                    // Lấy ngày hiện tại theo giờ địa phương, định dạng YYYY-MM-DD
                     const today = new Date();
                     const yyyy = today.getFullYear();
                     const mm = String(today.getMonth() + 1).padStart(2, '0');
                     const dd = String(today.getDate()).padStart(2, '0');
-                    dateInput.value = `${dd}-${mm}-${yyyy}`;
+                    const todayStr = `${yyyy}-${mm}-${dd}`;
+                    
+                    dateInput.value = todayStr; 
+                    dateInput.setAttribute("min", todayStr);
                 }
             }
             setTodayDate();
 
+            // Handle Form Submit
             if (bookingForm) {
                 bookingForm.addEventListener('submit', function (e) {
                     e.preventDefault();
-
-                    // 1. Hiệu ứng Loading
+                    
                     const originalBtnText = submitBtn.innerText;
-                    submitBtn.innerText = "Đang gửi thông tin...";
+                    submitBtn.innerText = "Đang gửi...";
                     submitBtn.disabled = true;
                     submitBtn.style.cursor = "wait";
 
-                    // 2. Gom dữ liệu form
                     const formData = new FormData(bookingForm);
-
-                    // 3. Gửi lên Google Sheet
+                    
                     fetch(scriptURL, { method: 'POST', body: formData })
                         .then(response => {
-                            // Thành công
                             submitBtn.innerText = originalBtnText;
                             submitBtn.disabled = false;
                             submitBtn.style.cursor = "pointer";
-
+                            
                             if (successPopup) successPopup.classList.add('show');
                             bookingForm.reset();
                             setTodayDate();
-                            console.log('Success!', response);
                         })
                         .catch(error => {
-                            // Thất bại
                             console.error('Error!', error.message);
-                            alert("Có lỗi xảy ra, vui lòng thử lại hoặc gọi hotline!");
+                            alert("Có lỗi xảy ra, vui lòng thử lại!");
                             submitBtn.innerText = originalBtnText;
                             submitBtn.disabled = false;
                         });
                 });
             }
 
+            // Popup Controls
             if (closePopupBtn) {
                 closePopupBtn.addEventListener('click', function () {
                     successPopup.classList.remove('show');
@@ -571,5 +476,4 @@
         }
     </script>
 </body>
-
 </html>
