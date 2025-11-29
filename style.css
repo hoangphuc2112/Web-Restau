@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. RESET & GLOBAL STYLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -27,9 +30,9 @@ img {
     display: block;
 }
 
-/* =============================== */
-/* 2. HEADER                       */
-/* =============================== */
+/* ==========================================================================
+   2. HEADER SECTION
+   ========================================================================== */
 .site-header {
     width: 100%;
     background-color: #fff;
@@ -61,13 +64,8 @@ img {
     font-size: 16px;
 }
 
-.social-link.fb {
-    color: #1877f2;
-}
-
-.social-link.tiktok {
-    color: #000;
-}
+.social-link.fb { color: #1877f2; }
+.social-link.tiktok { color: #000; }
 
 .separator {
     color: #ccc;
@@ -85,7 +83,6 @@ img {
     color: #d32f2f;
 }
 
-/* Main Nav */
 .header-main {
     padding: 15px 0;
 }
@@ -132,16 +129,16 @@ img {
     color: #d32f2f;
 }
 
-/* =============================== */
-/* 3. SLIDER CHÍNH                 */
-/* =============================== */
-.slider-section {
+/* ==========================================================================
+   3. HERO BANNER (STATIC)
+   ========================================================================== */
+.hero-static-section {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.slider-container {
+.hero-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 20px;
@@ -152,84 +149,15 @@ img {
     aspect-ratio: 16/6;
 }
 
-.slider-wrapper {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    height: 100%;
-}
-
-.slide img {
+.hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Controls */
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #333;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 50%;
-    border: none;
-    transition: 0.3s;
-    z-index: 10;
-}
-
-.prev:hover,
-.next:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.prev {
-    left: 15px;
-}
-
-.next {
-    right: 15px;
-}
-
-.dots-container {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.dot.active {
-    background-color: #d32f2f;
-    transform: scale(1.3);
-}
-
-/* =============================== */
-/* 4. BANNER KHUYẾN MÃI TĨNH       */
-/* =============================== */
+/* ==========================================================================
+   4. PROMO BANNER & BUTTONS
+   ========================================================================== */
 .promo-banner-section {
     width: 100%;
     margin: 30px 0;
@@ -242,9 +170,41 @@ img {
     object-fit: cover;
 }
 
-/* =============================== */
-/* 5. ABOUT (GIỚI THIỆU) SECTION   */
-/* =============================== */
+/* Mobile Booking Button */
+.booking-btn-container {
+    display: none;
+}
+
+.btn-booking-now {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #d32f2f, #ff6600);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse-btn 2s infinite;
+    text-decoration: none;
+}
+
+.btn-booking-now i {
+    font-size: 18px;
+}
+
+@keyframes pulse-btn {
+    0% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 102, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0); }
+}
+
+/* ==========================================================================
+   5. ABOUT SECTION
+   ========================================================================== */
 .about-section {
     padding: 50px 0;
     background-color: #fff;
@@ -270,14 +230,8 @@ img {
     font-family: 'Inter', sans-serif;
 }
 
-.text-red {
-    color: #ff2500;
-}
-
-.text-purple {
-    color: #6b01a3;
-    margin-left: 10px;
-}
+.text-red { color: #ff2500; }
+.text-purple { color: #6b01a3; margin-left: 10px; }
 
 .about-desc {
     font-size: 15px;
@@ -301,7 +255,6 @@ img {
     padding: 12px 25px;
     border-radius: 45px;
     font-weight: 600;
-    font-family: 'Inter', sans-serif;
     width: 205px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(107, 1, 163, 0.3);
@@ -323,7 +276,7 @@ img {
     font-size: 12px;
 }
 
-/* Slide ảnh bên phải */
+/* About Image (Static) */
 .about-image-box {
     flex-shrink: 0;
     width: 550px;
@@ -333,54 +286,24 @@ img {
     overflow: hidden;
     position: relative;
     background-color: #ccc;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.about-slider-track {
-    display: flex;
+.about-static-img {
     width: 100%;
-    animation: slideShow 12s infinite;
-}
-
-.about-slider-track img {
-    width: 550px;
-    height: 325px;
+    height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.5s ease;
 }
 
-@keyframes slideShow {
-    0% {
-        transform: translateX(0);
-    }
-
-    30% {
-        transform: translateX(0);
-    }
-
-    33% {
-        transform: translateX(-550px);
-    }
-
-    63% {
-        transform: translateX(-550px);
-    }
-
-    66% {
-        transform: translateX(-1100px);
-    }
-
-    96% {
-        transform: translateX(-1100px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+.about-image-box:hover .about-static-img {
+    transform: scale(1.05);
 }
 
-/* =============================== */
-/* 6. EXCLUSIVE (KHUYẾN MÃI)       */
-/* =============================== */
+/* ==========================================================================
+   6. EXCLUSIVE SECTION
+   ========================================================================== */
 .exclusive-section {
     padding: 60px 0;
     background-color: #fff;
@@ -393,16 +316,8 @@ img {
     gap: 50px;
 }
 
-/* Control Title Visibility */
-.mobile-only-title {
-    display: none;
-    /* Mặc định ẩn trên desktop */
-}
-
-.desktop-only-title {
-    display: block;
-    /* Mặc định hiện trên desktop */
-}
+.mobile-only-title { display: none; }
+.desktop-only-title { display: block; }
 
 .exclusive-image-box {
     flex: 0 0 45%;
@@ -418,9 +333,7 @@ img {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.exclusive-content {
-    flex: 1;
-}
+.exclusive-content { flex: 1; }
 
 .section-title {
     font-size: 32px;
@@ -451,7 +364,6 @@ img {
     display: inline-block;
 }
 
-/* Voucher Grid */
 .voucher-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -466,9 +378,7 @@ img {
     transition: transform 0.3s ease;
 }
 
-.voucher-item:hover {
-    transform: translateY(-3px);
-}
+.voucher-item:hover { transform: translateY(-3px); }
 
 .voucher-item img {
     width: 100%;
@@ -478,581 +388,9 @@ img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* =============================== */
-/* 7. FOOTER                       */
-/* =============================== */
-.footer {
-    width: 100%;
-    padding: 50px 0 20px 0;
-
-    /* SỬA DÒNG NÀY: Đổi từ 50px thành 0 để xóa khoảng trắng */
-    margin-top: 0;
-
-    background: linear-gradient(180deg, #4a0080, #2a004a);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-}
-
-/* Footer Top Columns - DESKTOP */
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    /* Căn hàng ngang trên đầu */
-    padding-bottom: 40px;
-    gap: 20px;
-    flex-wrap: nowrap;
-    /* Đảm bảo không xuống dòng trên PC */
-}
-
-.footer-col {
-    flex: 1;
-    min-width: 200px;
-}
-
-.logo-col {
-    flex: 0 0 20%;
-    /* Cột logo nhỏ hơn chút */
-    text-align: left;
-}
-
-.logo-col img {
-    width: 150px;
-    height: auto;
-}
-
-.footer-heading {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: capitalize;
-}
-
-.footer-list {
-    list-style: none;
-}
-
-.footer-list li {
-    margin-bottom: 12px;
-}
-
-.footer-list a {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-list a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-.footer-text {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
-
-.hotline-box {
-    font-size: 14px;
-}
-
-.hotline-label {
-    font-weight: 700;
-}
-
-.hotline-number {
-    margin-left: 5px;
-    color: #fff;
-}
-
-/* Social Buttons */
-.social-group {
-    display: flex;
-    gap: 15px;
-}
-
-.social-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000;
-    /* Nền đen cho icon */
-    color: #fff;
-    font-size: 16px;
-    transition: 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.social-btn.fb {
-    background-color: #1877f2;
-    /* Nền xanh cho FB */
-    border: none;
-}
-
-.social-btn:hover {
-    transform: translateY(-3px);
-    opacity: 0.9;
-}
-
-/* Footer Bottom (OpenLive) */
-.footer-openlive {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-}
-
-.cng-ty-c {
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    cursor: default;
-}
-
-.m-s-thu,
-.a-ch-tng,
-.obranding-parent {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.5;
-}
-
-.hotline-1900-5372-parent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.frame-child {
-    height: 12px;
-    width: 1px;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.obranding-parent {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 5px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* =============================== */
-/* 8. RESPONSIVE (MOBILE/TABLET)   */
-/* =============================== */
-@media (max-width: 992px) {
-
-    .about-wrapper,
-    .exclusive-wrapper {
-        flex-direction: column;
-    }
-
-    /* --- FIX: MOBILE ORDER CHO SECTION KHUYẾN MÃI --- */
-    .mobile-only-title {
-        display: block;
-        /* Hiện title ở trên cùng */
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .desktop-only-title {
-        display: none;
-        /* Ẩn title ở dưới */
-    }
-
-    .exclusive-image-box {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    /* ----------------------------------------------- */
-
-    .about-image-box {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-    }
-
-    .about-slider-track {
-        animation: none;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-    }
-
-    .about-slider-track img {
-        width: 100%;
-        scroll-snap-align: center;
-    }
-}
-
-/* --- Mobile (Màn hình dưới 768px) --- */
-@media (max-width: 768px) {
-
-    /* Header */
-    .main-nav,
-    .auth-links,
-    .social-icons,
-    .separator {
-        display: none;
-    }
-
-    .top-bar-content {
-        justify-content: center;
-    }
-
-    .logo-container {
-        margin: 0 auto;
-    }
-
-    .header-main {
-        text-align: center;
-    }
-
-    /* Slider Banner */
-    .slider-container {
-        margin: 0 15px;
-        height: auto !important;
-        aspect-ratio: auto !important;
-        background: transparent !important;
-        box-shadow: none;
-    }
-
-    .slide img {
-        border-radius: 10px;
-        object-fit: contain !important;
-    }
-
-    .prev,
-    .next,
-    .dots-container {
-        display: none !important;
-    }
-
-    /* Footer Mobile: Xếp dọc */
-    .footer-top {
-        flex-direction: column;
-        text-align: left;
-        gap: 30px;
-        padding-left: 20px;
-        /* Thụt vào một chút cho đẹp */
-    }
-
-    .logo-col {
-        text-align: left;
-    }
-
-    .social-group {
-        justify-content: flex-start;
-    }
-
-    .hotline-1900-5372-parent {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .frame-child {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .voucher-grid {
-        gap: 10px;
-    }
-}
-
-/* =============================== */
-/* 9. BUTTON ĐẶT BÀN (MỚI)         */
-/* =============================== */
-.booking-btn-container {
-    text-align: center;
-    margin-top: 25px;
-    /* Tạo khoảng trắng phía trên nút */
-    margin-bottom: 10px;
-}
-
-.btn-booking-now {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    /* Màu Gradient Đỏ Cam cho rực rỡ, hợp tone nhà hàng */
-    background: linear-gradient(90deg, #d32f2f, #ff6600);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 14px 40px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
-    /* Bóng đỏ mờ */
-    transition: all 0.3s ease;
-
-    /* Hiệu ứng nhịp đập thu hút */
-    animation: pulse-btn 2s infinite;
-}
-
-.btn-booking-now i {
-    font-size: 18px;
-}
-
-.btn-booking-now:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
-    background: linear-gradient(90deg, #b71c1c, #e65100);
-}
-
-/* Keyframes cho hiệu ứng nhịp đập */
-@keyframes pulse-btn {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 15px rgba(255, 102, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
-    }
-}
-
-/* Responsive cho Mobile: Nút to hơn chút cho dễ bấm */
-@media (max-width: 768px) {
-    .btn-booking-now {
-        width: 80%;
-        /* Nút chiếm 80% màn hình điện thoại */
-        font-size: 18px;
-        /* Chữ to hơn */
-        padding: 15px 0;
-    }
-}
-
-/* =============================== */
-/* 9. BUTTON ĐẶT BÀN (MOBILE ONLY) */
-/* =============================== */
-
-/* --- 1. Mặc định ẩn trên Desktop/PC --- */
-.booking-btn-container {
-    display: none;
-}
-
-/* Style cơ bản của nút (Giữ sẵn để mobile dùng) */
-.btn-booking-now {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(90deg, #d32f2f, #ff6600);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
-    transition: all 0.3s ease;
-    animation: pulse-btn 2s infinite;
-    /* Hiệu ứng nhịp đập */
-    text-decoration: none;
-    /* Bỏ gạch chân mặc định của thẻ a */
-}
-
-.btn-booking-now i {
-    font-size: 18px;
-}
-
-@keyframes pulse-btn {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 15px rgba(255, 102, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
-    }
-}
-
-/* --- 2. Chỉ hiện và căn giữa khi vào Mobile --- */
-@media (max-width: 768px) {
-    .booking-btn-container {
-        display: block !important;
-        /* Hiện lên */
-        text-align: center;
-        /* CĂN GIỮA TUYỆT ĐỐI */
-        margin-top: 25px;
-        margin-bottom: 30px;
-        width: 100%;
-    }
-
-    .btn-booking-now {
-        width: 80%;
-        /* Nút rộng 80% màn hình cho dễ bấm */
-        padding: 15px 0;
-        /* Độ dày nút */
-        font-size: 18px;
-        /* Chữ to rõ */
-    }
-}
-
-/* =============================== */
-/* 9. BUTTON ĐẶT BÀN (MỚI)         */
-/* =============================== */
-.booking-btn-container {
-    text-align: center;
-    margin-top: 25px;
-    /* Tạo khoảng trắng phía trên nút */
-    margin-bottom: 10px;
-}
-
-.btn-booking-now {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    /* Màu Gradient Đỏ Cam cho rực rỡ, hợp tone nhà hàng */
-    background: linear-gradient(90deg, #d32f2f, #ff6600);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 14px 40px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
-    /* Bóng đỏ mờ */
-    transition: all 0.3s ease;
-
-    /* Hiệu ứng nhịp đập thu hút */
-    animation: pulse-btn 2s infinite;
-}
-
-.btn-booking-now i {
-    font-size: 18px;
-}
-
-.btn-booking-now:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
-    background: linear-gradient(90deg, #b71c1c, #e65100);
-}
-
-/* Keyframes cho hiệu ứng nhịp đập */
-@keyframes pulse-btn {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 15px rgba(255, 102, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
-    }
-}
-
-/* Responsive cho Mobile: Nút to hơn chút cho dễ bấm */
-@media (max-width: 768px) {
-    .btn-booking-now {
-        width: 80%;
-        /* Nút chiếm 80% màn hình điện thoại */
-        font-size: 18px;
-        /* Chữ to hơn */
-        padding: 15px 0;
-    }
-}
-
-/* =============================== */
-/* 9. BUTTON ĐẶT BÀN (MOBILE ONLY) */
-/* =============================== */
-
-/* --- 1. Mặc định ẩn trên Desktop/PC --- */
-.booking-btn-container {
-    display: none;
-}
-
-/* Style cơ bản của nút (Giữ sẵn để mobile dùng) */
-.btn-booking-now {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(90deg, #d32f2f, #ff6600);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
-    transition: all 0.3s ease;
-    animation: pulse-btn 2s infinite;
-    /* Hiệu ứng nhịp đập */
-    text-decoration: none;
-    /* Bỏ gạch chân mặc định của thẻ a */
-}
-
-.btn-booking-now i {
-    font-size: 18px;
-}
-
-@keyframes pulse-btn {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 15px rgba(255, 102, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
-    }
-}
-
-/* --- 2. Chỉ hiện và căn giữa khi vào Mobile --- */
-@media (max-width: 768px) {
-    .booking-btn-container {
-        display: block !important;
-        /* Hiện lên */
-        text-align: center;
-        /* CĂN GIỮA TUYỆT ĐỐI */
-        margin-top: 25px;
-        margin-bottom: 30px;
-        width: 100%;
-    }
-
-    .btn-booking-now {
-        width: 80%;
-        /* Nút rộng 80% màn hình cho dễ bấm */
-        padding: 15px 0;
-        /* Độ dày nút */
-        font-size: 18px;
-        /* Chữ to rõ */
-    }
-}
-
-/* =============================== */
-/* 10. BOOKING SECTION (FORM)      */
-/* =============================== */
+/* ==========================================================================
+   7. BOOKING SECTION (SPLIT SCREEN)
+   ========================================================================== */
 .booking-section {
     width: 100%;
     padding: 60px 0;
@@ -1061,56 +399,38 @@ img {
     overflow: hidden;
 }
 
-/* KHUNG CHỨA CHUNG (CARD LỚN) */
 .booking-container {
     display: flex;
     align-items: stretch;
-    /* Ép 2 bên cao bằng nhau */
     background: #fff;
-    /* Màu nền trắng cho cả khối */
     border-radius: 20px;
-    /* Bo góc cho cả khối lớn */
     overflow: hidden;
-    /* Cắt những phần ảnh thừa ra ngoài góc bo */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    /* Bóng đổ lớn tạo chiều sâu */
     max-width: 1100px;
-    /* Giới hạn chiều rộng cho đẹp */
     margin: 0 auto;
-    /* Căn giữa */
 }
 
-/* --- CỘT TRÁI: ẢNH (TRÀN VIỀN) --- */
 .booking-image-col {
     flex: 1;
-    /* Chiếm 50% */
     width: 50%;
     position: relative;
     padding: 0;
-    /* Xóa đệm để ảnh tràn ra sát mép */
 }
 
 .booking-banner-img {
     width: 100%;
     height: 100%;
-    /* Cao full 100% cột chứa nó */
     object-fit: cover;
-    /* Cắt ảnh tự động để lấp đầy mà không méo */
     display: block;
     border-radius: 0;
-    /* Bỏ bo góc riêng, dùng bo góc của container cha */
 }
 
-/* --- CỘT PHẢI: FORM --- */
 .booking-form-col {
     flex: 1;
-    /* Chiếm 50% */
     width: 50%;
     padding: 40px;
-    /* Tạo khoảng cách thoáng cho nội dung bên trong */
 }
 
-/* Bỏ các style khung cũ của wrapper đi vì giờ container cha lo rồi */
 .booking-form-wrapper {
     background: transparent;
     padding: 0;
@@ -1119,85 +439,24 @@ img {
     height: auto;
 }
 
-/* ... GIỮ NGUYÊN CÁC STYLE CON BÊN TRONG (Input, Label, Button...) ... */
-.form-header {
-    text-align: center;
-    margin-bottom: 25px;
-}
+.form-header { text-align: center; margin-bottom: 25px; }
+.form-header h3 { font-size: 24px; font-weight: 800; text-transform: uppercase; color: #333; margin-bottom: 5px; }
+.brand-name { color: #480090; }
+.branch-info { font-size: 13px; color: #666; font-weight: 600; }
+.branch-info i { color: #ff6600; margin-right: 5px; }
 
-.form-header h3 {
-    font-size: 24px;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #333;
-    margin-bottom: 5px;
-}
+.booking-form { display: flex; flex-direction: column; gap: 15px; }
+.form-row { display: flex; gap: 20px; }
+.form-group { flex: 1; display: flex; flex-direction: column; }
+.form-group label { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: #333; }
+.required { color: #ff2500; }
 
-.brand-name {
-    color: #480090;
-}
+.input-with-icon { position: relative; width: 100%; }
+.input-with-icon i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #666; font-size: 16px; pointer-events: none; }
+.input-with-icon.textarea-icon i { top: 20px; transform: none; }
 
-.branch-info {
-    font-size: 13px;
-    color: #666;
-    font-weight: 600;
-}
-
-.branch-info i {
-    color: #ff6600;
-    margin-right: 5px;
-}
-
-.booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-row {
-    display: flex;
-    gap: 20px;
-}
-
-.form-group {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #333;
-}
-
-.required {
-    color: #ff2500;
-}
-
-.input-with-icon {
-    position: relative;
-    width: 100%;
-}
-
-.input-with-icon i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
-    font-size: 16px;
-    pointer-events: none;
-}
-
-.input-with-icon.textarea-icon i {
-    top: 20px;
-    transform: none;
-}
-
-.input-with-icon input,
-.input-with-icon select,
+.input-with-icon input, 
+.input-with-icon select, 
 .input-with-icon textarea {
     width: 100%;
     padding: 12px 15px 12px 45px;
@@ -1210,31 +469,15 @@ img {
     background: #f9f9f9;
 }
 
-/* Thêm background xám nhẹ cho input nổi bật trên nền trắng */
-.input-with-icon input:focus,
-.input-with-icon select:focus,
+.input-with-icon input:focus, 
+.input-with-icon select:focus, 
 .input-with-icon textarea:focus {
     border-color: #480090;
     background: #fff;
 }
 
-.unit {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 13px;
-    color: #666;
-    font-weight: 500;
-    pointer-events: none;
-}
-
-.note-text {
-    font-size: 11px;
-    color: #666;
-    margin-top: 5px;
-    font-style: italic;
-}
+.unit { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 13px; color: #666; font-weight: 500; pointer-events: none; }
+.note-text { font-size: 11px; color: #666; margin-top: 5px; font-style: italic; }
 
 .btn-submit-booking {
     margin-top: 10px;
@@ -1263,264 +506,194 @@ img {
     opacity: 0.8;
 }
 
-/* =============================== */
-/* 12. RESPONSIVE (UPDATE)         */
-/* =============================== */
+/* ==========================================================================
+   8. FOOTER SECTION
+   ========================================================================== */
+.footer {
+    width: 100%;
+    padding: 60px 0 30px 0;
+    margin-top: 0;
+    background: linear-gradient(180deg, #4a0080 0%, #1a002e 100%);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    gap: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col { flex: 1; min-width: 180px; }
+
+.logo-col {
+    flex: 0 0 20%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo-col img { width: 140px; height: auto; object-fit: contain; }
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.footer-list { list-style: none; padding: 0; margin: 0; }
+.footer-list li { margin-bottom: 12px; }
+.footer-list a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.footer-list a:hover { color: #fff; transform: translateX(5px); }
+
+.footer-text {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+.hotline-box { margin-top: 10px; }
+.hotline-label { font-weight: 700; color: #fff; }
+.hotline-number { color: #ff6d3d; font-weight: 700; margin-left: 5px; }
+
+.social-group { display: flex; gap: 12px; }
+.social-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff; font-size: 18px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.social-btn:hover { background-color: #fff; color: #4a0080; transform: translateY(-3px); }
+
+.footer-openlive {
+    padding-top: 30px;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 10px; text-align: center;
+    font-size: 13px; color: rgba(255, 255, 255, 0.7);
+}
+
+.cng-ty-c {
+    font-size: 14px; font-weight: 800; color: #fff;
+    text-transform: uppercase; margin-bottom: 5px; cursor: default;
+    letter-spacing: 0.5px;
+}
+
+.hotline-1900-5372-parent, .obranding-parent {
+    display: flex; align-items: center; justify-content: center;
+    gap: 15px; flex-wrap: wrap;
+}
+
+.frame-child { width: 1px; height: 12px; background-color: rgba(255, 255, 255, 0.4); }
+.copyright-symbol { font-size: 16px; line-height: 1; }
+
+/* ==========================================================================
+   9. POPUP SUCCESS
+   ========================================================================== */
+.popup-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); z-index: 99999;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden; transition: all 0.3s ease-in-out;
+}
+.popup-overlay.show { opacity: 1; visibility: visible; }
+
+.popup-content {
+    background: linear-gradient(180deg, #4a0080, #1a002e);
+    width: 90%; max-width: 480px; padding: 40px 30px;
+    border-radius: 20px; text-align: center; color: #fff;
+    position: relative; border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.popup-overlay.show .popup-content { transform: scale(1); }
+
+.popup-title { font-size: 24px; font-weight: 800; margin: 20px 0 15px; text-transform: uppercase; }
+.popup-message { font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, 0.9); margin-bottom: 30px; }
+
+.btn-popup-ok {
+    background: linear-gradient(90deg, #ff6600, #ff8e53);
+    color: #fff; border: none; padding: 12px 50px;
+    border-radius: 30px; font-weight: 700; font-size: 16px;
+    cursor: pointer; box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+    transition: transform 0.2s;
+}
+.btn-popup-ok:hover { background: #ff6600; }
+.btn-popup-ok:active { transform: scale(0.95); }
+
+/* Checkmark Animation */
+.success-checkmark { width: 80px; height: 80px; margin: 0 auto; position: relative; }
+.check-icon { width: 80px; height: 80px; position: relative; border-radius: 50%; box-sizing: content-box; border: 4px solid #4CAF50; }
+.check-icon::before { top: 3px; left: -2px; width: 30px; transform-origin: 100% 50%; border-radius: 100px 0 0 100px; }
+.check-icon::after { top: 0; left: 30px; width: 60px; transform-origin: 0 50%; border-radius: 0 100px 100px 0; animation: rotate-circle 4.25s ease-in; }
+.icon-line { height: 5px; background-color: #4CAF50; display: block; border-radius: 2px; position: absolute; z-index: 10; }
+.icon-line.line-tip { top: 46px; left: 14px; width: 25px; transform: rotate(45deg); animation: icon-line-tip 0.75s; }
+.icon-line.line-long { top: 38px; right: 8px; width: 47px; transform: rotate(-45deg); animation: icon-line-long 0.75s; }
+.icon-circle { top: -4px; left: -4px; z-index: 10; width: 80px; height: 80px; border-radius: 50%; position: absolute; box-sizing: content-box; border: 4px solid rgba(76, 175, 80, .5); }
+.icon-fix { top: 8px; width: 5px; left: 26px; z-index: 1; height: 85px; position: absolute; transform: rotate(-45deg); }
+@keyframes icon-line-tip { 0% { width: 0; left: 1px; top: 19px; } 54% { width: 0; left: 1px; top: 19px; } 70% { width: 50px; left: -8px; top: 37px; } 84% { width: 17px; left: 21px; top: 48px; } 100% { width: 25px; left: 14px; top: 46px; } }
+@keyframes icon-line-long { 0% { width: 0; right: 46px; top: 54px; } 65% { width: 0; right: 46px; top: 54px; } 84% { width: 55px; right: 0px; top: 35px; } 100% { width: 47px; right: 8px; top: 38px; } }
+
+/* ==========================================================================
+   10. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 @media (max-width: 992px) {
-    .booking-container {
-        flex-direction: column;
-        /* Mobile xếp dọc: Ảnh trên, Form dưới */
-        max-width: 100%;
-        border-radius: 15px;
-    }
+    .about-wrapper, .exclusive-wrapper { flex-direction: column; }
+    .mobile-only-title { display: block; text-align: center; margin-bottom: 20px; }
+    .desktop-only-title { display: none; }
+    .exclusive-image-box { width: 100%; text-align: center; margin-bottom: 20px; }
+    .about-image-box { width: 100%; height: auto; aspect-ratio: 16/9; }
+    
+    .booking-container { flex-direction: column; max-width: 100%; border-radius: 15px; }
+    .booking-image-col { width: 100%; height: 250px; }
+    .booking-form-col { width: 100%; padding: 30px 20px; }
 
-    .booking-image-col {
-        width: 100%;
-        height: 250px;
-        /* Chiều cao cố định cho ảnh trên mobile */
-    }
+    .footer-top { flex-wrap: wrap; }
+    .footer-col { flex: 0 0 45%; }
+    .logo-col { flex: 0 0 100%; justify-content: center; margin-bottom: 20px; }
+}
 
-    .booking-form-col {
-        width: 100%;
-        padding: 30px 20px;
-        /* Giảm padding trên mobile */
-    }
+@media (max-width: 768px) {
+    .main-nav, .auth-links, .social-icons, .separator { display: none; }
+    .top-bar-content { justify-content: center; }
+    .logo-container { margin: 0 auto; }
+    .header-main { text-align: center; }
+    
+    /* Hero Banner Mobile */
+    .hero-container { margin: 0 15px; height: auto !important; aspect-ratio: auto !important; box-shadow: none; background: transparent; }
+    .hero-img { border-radius: 10px; object-fit: contain !important; }
+
+    .booking-btn-container { display: block !important; text-align: center; margin-top: 25px; margin-bottom: 30px; width: 100%; } 
+    .btn-booking-now { width: 80%; padding: 15px 0; font-size: 18px; }
+
+    .footer { padding: 40px 0 20px 0; }
+    .footer-top { flex-direction: column; gap: 30px; text-align: center; }
+    .footer-col, .logo-col { width: 100%; flex: auto; align-items: center; }
+    .logo-col { justify-content: center; }
+    .social-group { justify-content: center; }
+    .footer-openlive { padding-top: 20px; border-top: none; }
+    .hotline-1900-5372-parent { flex-direction: column; gap: 5px; }
+    .frame-child { display: none; }
 }
 
 @media (max-width: 576px) {
-    .booking-section {
-        padding: 30px 15px;
-    }
-
-    .form-row {
-        flex-direction: column;
-        gap: 15px;
-    }
+    .booking-section { padding: 30px 15px; }
+    .form-row { flex-direction: column; gap: 15px; }
 }
 
-/* =============================== */
-/* 11. POPUP SUCCESS (STYLE)       */
-/* =============================== */
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    /* Nền đen mờ che phía sau */
-    z-index: 99999;
-    /* Đảm bảo luôn nằm trên cùng */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* Ẩn mặc định */
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Class kích hoạt hiện popup */
-.popup-overlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* --- KHUNG NỘI DUNG POPUP --- */
-.popup-content {
-    background: linear-gradient(180deg, #4a0080, #1a002e);
-    /* Màu tím thương hiệu */
-    width: 90%;
-    max-width: 480px;
-    padding: 40px 30px;
-    border-radius: 20px;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
-
-    /* Hiệu ứng phóng to khi hiện */
-    transform: scale(0.8);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.popup-overlay.show .popup-content {
-    transform: scale(1);
-}
-
-.popup-title {
-    font-size: 24px;
-    font-weight: 800;
-    margin: 20px 0 15px;
-    text-transform: uppercase;
-}
-
-.popup-message {
-    font-size: 15px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 30px;
-}
-
-/* Nút OK trong popup */
-.btn-popup-ok {
-    background: linear-gradient(90deg, #ff6600, #ff8e53);
-    color: #fff;
-    border: none;
-    padding: 12px 50px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
-    transition: transform 0.2s;
-}
-
-.btn-popup-ok:hover {
-    background: #ff6600;
-}
-
-.btn-popup-ok:active {
-    transform: scale(0.95);
-}
-
-/* --- ANIMATION CHECK MARK (DẤU TÍCH XANH) --- */
-.success-checkmark {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.check-icon {
-    width: 80px;
-    height: 80px;
-    position: relative;
-    border-radius: 50%;
-    box-sizing: content-box;
-    border: 4px solid #4CAF50;
-}
-
-.check-icon::before {
-    top: 3px;
-    left: -2px;
-    width: 30px;
-    transform-origin: 100% 50%;
-    border-radius: 100px 0 0 100px;
-}
-
-.check-icon::after {
-    top: 0;
-    left: 30px;
-    width: 60px;
-    transform-origin: 0 50%;
-    border-radius: 0 100px 100px 0;
-    animation: rotate-circle 4.25s ease-in;
-}
-
-.icon-line {
-    height: 5px;
-    background-color: #4CAF50;
-    display: block;
-    border-radius: 2px;
-    position: absolute;
-    z-index: 10;
-}
-
-.icon-line.line-tip {
-    top: 46px;
-    left: 14px;
-    width: 25px;
-    transform: rotate(45deg);
-    animation: icon-line-tip 0.75s;
-}
-
-.icon-line.line-long {
-    top: 38px;
-    right: 8px;
-    width: 47px;
-    transform: rotate(-45deg);
-    animation: icon-line-long 0.75s;
-}
-
-.icon-circle {
-    top: -4px;
-    left: -4px;
-    z-index: 10;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    position: absolute;
-    box-sizing: content-box;
-    border: 4px solid rgba(76, 175, 80, .5);
-}
-
-.icon-fix {
-    top: 8px;
-    width: 5px;
-    left: 26px;
-    z-index: 1;
-    height: 85px;
-    position: absolute;
-    transform: rotate(-45deg);
-}
-
-@keyframes icon-line-tip {
-    0% {
-        width: 0;
-        left: 1px;
-        top: 19px;
-    }
-
-    54% {
-        width: 0;
-        left: 1px;
-        top: 19px;
-    }
-
-    70% {
-        width: 50px;
-        left: -8px;
-        top: 37px;
-    }
-
-    84% {
-        width: 17px;
-        left: 21px;
-        top: 48px;
-    }
-
-    100% {
-        width: 25px;
-        left: 14px;
-        top: 46px;
-    }
-}
-
-@keyframes icon-line-long {
-    0% {
-        width: 0;
-        right: 46px;
-        top: 54px;
-    }
-
-    65% {
-        width: 0;
-        right: 46px;
-        top: 54px;
-    }
-
-    84% {
-        width: 55px;
-        right: 0px;
-        top: 35px;
-    }
-
-    100% {
-        width: 47px;
-        right: 8px;
-        top: 38px;
-    }
+@media (max-width: 480px) {
+    .voucher-grid { gap: 10px; }
 }
